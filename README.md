@@ -23,16 +23,16 @@ Example: `GET /denon/set/PWON -> { response: "executed PWON" }`
 ## Running from the command line
 
 ```
-nvm use
-npm ci
-npm run start
+$ nvm use
+$ npm ci
+$ ADDRESS=192.168.1.123 npm run start
 ```
 
 ## Running in Docker
 
 The included Dockerfile will run the server on an Alpine image.
 
-### Variables
+## Variables
 
--   `ADDRESS` (required) — the IP address of the receiver you want to connect to`
+-   `ADDRESS` (required) — the IP address of the receiver you want to connect to
 -   `PORT` (optional) — the port for the webserver, 8000 by default
