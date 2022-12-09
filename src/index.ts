@@ -5,12 +5,6 @@ const PORT = process.env.PORT ?? 8000
 
 const app = express()
 
-// Command reference: https://www.heimkinoraum.de/upload/files/product/IP_Protocol_AVR-Xx100.pdf
-
-/**
- * Use for commands ending in "?" (getters) — do not pass the question mark
- *   example: /get/PW -> { response: "PWON" }
- */
 app.get("/denon/get/:field", async (req, res) => {
     res.set("Access-Control-Allow-Origin", "*")
     try {
@@ -21,10 +15,6 @@ app.get("/denon/get/:field", async (req, res) => {
     }
 })
 
-/**
- * Use for commands not ending in (setters)
- *   example: /set/PWON -> { response: "executed PWON" }
- */
 app.get("/denon/set/:command", async (req, res) => {
     res.set("Access-Control-Allow-Origin", "*")
     try {
