@@ -1,18 +1,17 @@
 FROM node:alpine
-ADD . /api/
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+# Create App dir
+RUN mkdir -p /app
 
-# Copy and install dependencies
-COPY package.json /usr/src/app/
+# Set working directory to App dir
+WORKDIR /app
 
-# Copy everything else
-COPY . /usr/src/app
+# Copy project files
+COPY . .
 
-# Expose the web service port
+# Install dependencies
+RUN npm ci
+
 EXPOSE $PORT
 
-CMD nvm use
-CMD npm ci
 CMD npm run start
