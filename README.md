@@ -1,4 +1,4 @@
-# README
+# denon-api
 
 A very simple HTTP RPC wrapper for Denon receivers.
 

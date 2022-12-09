@@ -14,4 +14,6 @@ COPY . /usr/src/app
 # Expose the web service port
 EXPOSE $PORT
 
+CMD nvm use
+CMD npm ci
 CMD npm run start
